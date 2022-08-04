@@ -4,6 +4,7 @@
     box-sizing: border-box;
     border: 1px solid red;
     color: aliceblue;
+
     }
 body {
     background-color: blanchedalmond;
@@ -22,7 +23,7 @@ p {
     padding: 10px;
 }
 
-.top-bar button {
+ button {
     background-color: cadetblue;
     }
 
@@ -56,8 +57,19 @@ button :hover {
 
 h1, h2 {
     color: crimson;
+    text-align: center;
 }
 
 .quiz-intro {
-    margin-bottom: 10vh;
+    margin-top: 30vh;
 }
+
+.quiz-intro p {
+    text-align: center;
+}
+
+.quiz-intro button{
+    display: block;
+    
+}
+
