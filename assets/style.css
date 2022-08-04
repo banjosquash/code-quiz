@@ -2,8 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid red;
-    color: aliceblue;
+    
+    color: black;
 
     }
 body {
@@ -55,13 +55,20 @@ button :hover {
     align-items: center;
 }
 
+header {
+    display: block;
+}
+
 h1, h2 {
     color: crimson;
     text-align: center;
 }
 
-.quiz-intro {
-    margin-top: 30vh;
+.quiz-intro, main{
+    margin-bottom: 30vh;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: blanchedalmond;
 }
 
 .quiz-intro p {
@@ -70,6 +77,41 @@ h1, h2 {
 
 .quiz-intro button{
     display: block;
+    margin: auto;
+    background-color: blanchedalmond;
     
 }
+
+/*quiz content*/
+main {
+    display:block;
+}
+
+.questions {
+    display: none;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+}
+
+/*quiz finish*/
+.quiz-done-screen {
+    display: none;
+}
+
+
+/*highscores screen*/
+
+.highscores-screen {
+    display: none;
+}
+
+.highscores-screen ol {
+    overflow-y: scroll;
+    max-height: 50px;
+}
+
+
 
