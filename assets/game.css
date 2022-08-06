@@ -1,7 +1,22 @@
-.choices {
+.choice-container {
     display: flex;
+    margin-bottom: 5px;
     width: 100%;
-    border-radius: 10px;
-    flex-direction: column;
-    
+    font-size: 18px;
+    border: 10px solid #56a5eb;
+}
+
+.choice-container:hover {
+    background-color: #56a5eb;
+    color: aliceblue;
+}
+
+.choice-prefix {
+    padding: 15px 25px;
+    background-color: #56a5eb;
+    color: aliceblue;
+}
+
+.choice-text {
+    padding: 15px;
 }
