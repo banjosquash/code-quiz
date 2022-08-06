@@ -112,7 +112,7 @@ main {
 }
 
 .questions {
-    display: none;
+    
 }
 
 li {
@@ -122,14 +122,14 @@ li {
 
 /*quiz finish*/
 .quiz-done-screen {
-    display: none;
+    
 }
 
 
 /*highscores screen*/
 
 .highscores-screen {
-    display: none;
+    
 }
 
 .highscores-screen ol {

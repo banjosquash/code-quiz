@@ -1,50 +1,29 @@
-var questions = document.querySelector('#questions');
-var choices = Array.from(document.querySelectorAll('.choice-text'));
-var questions = document.querySelector('#questions');
+var question = {
+    id: 1,
+    text: 'What is 1=1',
+    choices: [
+        {text: '1', prefix: 'A', id:1},
+        {text: '2', prefix: 'B', id:2},
+        {text: '3', prefix: 'C', id:3},
+        {text: '0', prefix: 'D', id:4}
+    ],
+    answer: '1'
+}
 
-var currentQuestion ={}
-var acceptingAnswers = true
-var score = 0
-var questionCounter = 0
-var avaliableQuestions = []
+var choiceList = document.querySelector('.choices')
+console.log(choiceList)
 
-var questions = [
-    {
-        question: 'what is 1=1? ',
-        choice1: '2',
-        choice2: '1',
-        choice3: '0',
-        answer: 2,
-    }
-]
+var questionEl = document.querySelector('#question')
+console.log(questionEl)
 
-var questions = [
-    {
-        question: 'which Dunder Miflin branch is closing? ',
-        choice1: 'Scranton',
-        choice2: 'Utica',
-        choice3: 'Toothbrush',
-        answer: 1,
-    }
-]
+questionEl.innerHTML += question.text
 
-var questions = [
-    {
-        question: 'why did the chicken cross the road? ',
-        choice1: 'To catch a fly',
-        choice2: 'to get the other side',
-        choice3: 'it forgot its feather',
-        answer: 2,
-    }
-]
-
-var questions = [
-    {
-        question: 'How many times can Chuck Norris count to infinity? ',
-        choice1: 'twice',
-        choice2: 'infinity',
-        choice3: '0',
-        answer: 1,
-    }
-]
-
+question.choices.forEach(choice => {
+    choiceList.innerHTML += `
+    <input type="radio" id="choice-${choice.id}" name="question-${question.id}">
+    <label for="choice-${choice.id}"> ${choice.prefix}. ${choice.text} </label>
+    `
+})
+ // validate question right/wrong
+//var for storing answers
+// list of questions
