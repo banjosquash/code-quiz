@@ -1,6 +1,6 @@
 var question = document.getElementById("question");
 var choices = Array.from(document.getElementsByClassName("choice-text"));
-console.log(choices);
+
 
 var currentQuestion = {};
 var acceptingAnswers = false;
@@ -13,6 +13,7 @@ var questions = [{
     choice1: "4",
     choice2: "bananas",
     choice3: "10",
+    choice4: '6',
     answer: 1
 },
 {
@@ -20,6 +21,7 @@ var questions = [{
     choice1: "Scranton",
     choice2: "Utica",
     choice3: "toothbrush",
+    choice4: 'Nashua',
     answer: 2
 },
 {
@@ -27,6 +29,7 @@ var questions = [{
     choice1: "4",
     choice2: "2",
     choice3: "1",
+    choice4: '10',
     answer: 2
 },
 {
@@ -34,11 +37,12 @@ var questions = [{
     choice1: "yes",
     choice2: "no",
     choice3: "maybe?",
+    choice4: "yes and no",
     answer: 3
 }
 
 ];
-console.log(questions)
+
 
 var CORRECT_BONUS = 25;
 var MAX_QUESTIONS = 4
@@ -63,11 +67,11 @@ function getNewQuestion (){
         var num = choice.dataset['num'];
         choice.innerText = currentQuestion['choice' + num];
     });
-    console.log(choices)
+    
 
     availableQuestions.splice(questionIndex, 1);
 
-    acceptingAnswers = true
+    acceptingAnswers = true;
 };
  
 choices.forEach(choice => {
@@ -76,7 +80,19 @@ choices.forEach(choice => {
 
         acceptingAnswers= false;
         var selectedChoice = e.target
-        var selectedAnswer = selectedChoice.dataset['number'];
+        var selectedAnswer = selectedChoice.dataset['num'];
+
+        var appliedClass = 'incorrect';
+        if (selectedAnswer == currentQuestion.answer){
+            appliedClass = 'correct';
+        }
+
+        
+
+        console.log(selectedAnswer == currentQuestion.answer);
+      
+
+
 
         getNewQuestion();
     });
