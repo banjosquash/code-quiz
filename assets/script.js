@@ -1,7 +1,8 @@
 var question = document.getElementById("question");
 var choices = Array.from(document.getElementsByClassName("choice-text"));
 
-
+var questionCounterText = document.getElementById('questionCounter');
+var scoreText = document.getElementById('score');
 var currentQuestion = {};
 var acceptingAnswers = false;
 var score = 0;
@@ -59,6 +60,9 @@ function getNewQuestion (){
       return window.location.assign('/end.html');  
     }
     questionCounter++;
+
+    questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
+
     var questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question
@@ -87,16 +91,23 @@ choices.forEach(choice => {
             appliedClass = 'correct';
         }
 
-        
+        if (appliedClass === 'correct'){
+            scoreIncrement(CORRECT_BONUS);
+        }
+        selectedChoice.parentElement.classList.add(appliedClass);
 
-        console.log(selectedAnswer == currentQuestion.answer);
-      
-
-
-
-        getNewQuestion();
+        setTimeout( () => {
+            selectedChoice.parentElement.classList.remove(appliedClass);
+            getNewQuestion();
+        }, 1000);
+       console.log(appliedClass);     
     });
 });
+
+scoreIncrement = num => {
+    score += num;
+    scoreText.innerText = score;
+}
 
 
 startGame();
