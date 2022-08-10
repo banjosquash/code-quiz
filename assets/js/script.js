@@ -57,7 +57,8 @@ function startGame(){
 
 function getNewQuestion (){
     if(availableQuestions.length === 0){
-      return window.location.assign('/end.html');  
+        localStorage.setItem('mostRecentScore', score);
+      return window.location.assign("highscores.html");  
     }
     questionCounter++;
 
@@ -108,6 +109,16 @@ scoreIncrement = num => {
     score += num;
     scoreText.innerText = score;
 }
+
+var timeleft = 30;
+var downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    return window.location.assign("highscores.html");  
+  }
+  document.getElementById("progressBar").value = 30 - timeleft;
+  timeleft -= 1;
+}, 1000);
 
 
 startGame();
