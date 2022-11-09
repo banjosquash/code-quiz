@@ -11,8 +11,7 @@
 </head>
 
 <body>
-    <progress value="0" max="30" id="progressBar"></progress>
-    <div class="container">
+    <div class="container"></div>
         
         <div id="game" class="justify-center flex-column">
             <div id="hud">
@@ -20,9 +19,16 @@
                     <p class="hud-prefix">
                         question
                     </p>
-                    <h1 class="hud-main-text" id="questionCounter">
-                        
-                    </h1>
+                    <h1 class="hud-main-text" id="questionCounter"></h1>
+                
+                </div>
+                <div id="hud-item">
+                    <h3 class="hud-prefix" id="count">
+                        You have 30s
+                    </h3>
+                    <progress value="0" max="30" id="progressBar"></progress>
+                    
+                
                 </div>
                 <div id="hud-item">
                     <p class="hud-prefix">

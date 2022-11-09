@@ -49,6 +49,7 @@ var CORRECT_BONUS = 25;
 var MAX_QUESTIONS = 4
 
 function startGame(){
+    timerCount = 60;
     questionCounter =0
     score = 0
     availableQuestions = [...questions];
@@ -86,10 +87,14 @@ choices.forEach(choice => {
         acceptingAnswers= false;
         var selectedChoice = e.target
         var selectedAnswer = selectedChoice.dataset['num'];
+        
 
         var appliedClass = 'incorrect';
         if (selectedAnswer == currentQuestion.answer){
             appliedClass = 'correct';
+        }else {
+            // time penalty added
+            appliedClass = 'incorrect', timeleft -= 10
         }
 
         if (appliedClass === 'correct'){
@@ -108,17 +113,20 @@ choices.forEach(choice => {
 scoreIncrement = num => {
     score += num;
     scoreText.innerText = score;
-}
+};
 
+// counter with 30s shows as a progress bar 
 var timeleft = 30;
 var downloadTimer = setInterval(function(){
   if(timeleft <= 0){
     clearInterval(downloadTimer);
     return window.location.assign("highscores.html");  
   }
-  document.getElementById("progressBar").value = 30 - timeleft;
+  document.getElementById("progressBar", "count").value = 30 - timeleft;
   timeleft -= 1;
 }, 1000);
+
+
 
 
 startGame();
