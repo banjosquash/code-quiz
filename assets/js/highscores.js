@@ -44,11 +44,11 @@
     if (savedScores !== null) {
         
 
-        savedScores.forEach(function (player){
+        savedScores.forEach(function (event){
 
         var scoreList = document.createElement("li");
 
-        scoreList.textContent = player.username + " - " + player.score;
+        scoreList.textContent = event.playerName + " - " + event.saveHighScores;
 
         newScores.appendChild(scoreList);
         console.log(scoreList);
@@ -56,9 +56,9 @@
   };
 }
 
-  document.addEventListener("click", function (){
-    window.localStorage.removeItem("mostRecentScore")
-    newScores.innerHTML = "";
-  });
+  // document.addEventListener("click", function (){
+  //   window.localStorage.removeItem("mostRecentScore")
+  //   newScores.innerHTML = "";
+  // });
 
   showHighScores();

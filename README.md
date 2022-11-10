@@ -3,6 +3,14 @@
 
 # Title: Code Quiz
 
+## link to deployed app
+Your site is live at https://banjosquash.github.io/code-quiz/
+
+
+
+
+## Screenshot
+![](assets/images/code-quiz.png)
 ## Description:
 This is a 4 question quiz app, that has a 30 sec timer, if you miss a question 10sec is deducted as a penalty.
 ## Table of Contents:
