@@ -57,8 +57,12 @@ function startGame(){
 };
 
 function getNewQuestion (){
+
     if(availableQuestions.length === 0){
-        localStorage.setItem('mostRecentScore', score);
+        // var scoreArr = [  
+        //     playerScore, score
+        // ]
+        localStorage.setItem('userScores', JSON.stringify(score));
       return window.location.assign("highscores.html");  
     }
     questionCounter++;
